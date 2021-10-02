@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig host="34.122.188.35" id="39a1c94f-2f43-4741-8e1f-3640c08ece48" keyPath="$USER_HOME$/.ssh/gcp_ssh" port="22" nameFormat="DESCRIPTIVE" username="yichengshen1016" />
+    </configs>
+  </component>
+</project>

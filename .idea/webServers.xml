@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="16062184-ccb9-488f-8968-af1839677691" name="rmb-1" url="http://34.122.188.35">
+        <fileTransfer accessType="SFTP" host="34.122.188.35" port="22" sshConfigId="39a1c94f-2f43-4741-8e1f-3640c08ece48" sshConfig="yichengshen1016@34.122.188.35:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

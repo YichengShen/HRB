@@ -1,0 +1,15 @@
+topology: CustomFatTree # [ LinearTopo, TreeTopo, CustomFatTree ]
+
+linear_topo:
+  k: 5 # number of switches
+  n: 1 # number of hosts per switch
+
+tree_topo:
+  depth: 3
+  fanout: 2
+
+custom_fat_tree:
+  c: 3 # number of core switches
+  a: 3 # number of aggregation switches
+  e: 5 # number of edge switches
+  n: 1 # number of hosts per switch
