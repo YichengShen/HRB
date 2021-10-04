@@ -144,4 +144,8 @@ cython_debug/
 *.out
 
 # IDE config
-.idea
+.idea/
+
+# Data
+Data/
+watch.txt
