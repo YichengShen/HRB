@@ -36,6 +36,7 @@ if __name__ == '__main__':
     # Clean
     system("sudo mn --clean")
     system("sudo rm watch.txt")
+    system("sudo bash ./shell/clear_data.sh")
 
     # Set mininet log level
     setLogLevel('info')
