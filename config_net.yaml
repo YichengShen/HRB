@@ -9,7 +9,5 @@ tree_topo:
   fanout: 2
 
 custom_fat_tree:
-  c: 3 # number of core switches
-  a: 3 # number of aggregation switches
   e: 5 # number of edge switches
   n: 1 # number of hosts per switch

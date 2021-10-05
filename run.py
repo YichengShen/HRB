@@ -48,9 +48,7 @@ if __name__ == '__main__':
         topo = TreeTopo(depth=cfg_net['tree_topo']['depth'],
                         fanout=cfg_net['tree_topo']['fanout'])
     elif topoName == "CustomFatTree":
-        topo = CustomFatTree(c=cfg_net['custom_fat_tree']['c'],
-                             a=cfg_net['custom_fat_tree']['a'],
-                             e=cfg_net['custom_fat_tree']['e'],
+        topo = CustomFatTree(e=cfg_net['custom_fat_tree']['e'],
                              n=cfg_net['custom_fat_tree']['n'])
     net = Mininet(topo)
 
@@ -66,10 +64,11 @@ if __name__ == '__main__':
         h.cmdPrint("cd ~/go/src/HRB")
         h.cmdPrint(f"go run main.go >> watch.txt &")
 
+    print("Waiting for enough finishing messages")
     while True:
         num_lines = line_count("watch.txt")
         print(num_lines)
-        if num_lines == 5:
+        if num_lines == len(hosts):
             break
         sleep(1)
 
