@@ -1,13 +1,22 @@
-topology: LinearTopo # [ LinearTopo, TreeTopo, CustomFatTree ]
+topology: LinearTopo # [ LinearTopo, CustomTree, CustomFatTree, TreeTopo ]
 
+# Mininet's LinearTopo (total_hosts = k*n)
 linear_topo:
   k: 5 # number of switches
   n: 1 # number of hosts per switch
 
-tree_topo:
+# topologies/CustomTree.py
+custom_tree:
   depth: 3
   fanout: 2
+  total_hosts: 5
 
+# topologies/CustomFatTree.py (total_hosts = e*n)
 custom_fat_tree:
   e: 5 # number of edge switches
   n: 1 # number of hosts per switch
+
+# Mininet's TreeTopo (total_hosts = fanout**depth)
+tree_topo:
+  depth: 3
+  fanout: 2

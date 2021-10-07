@@ -5,6 +5,7 @@ from mininet.log import setLogLevel
 from mininet.topo import LinearTopo
 from mininet.topolib import TreeTopo
 from topologies.CustomFatTree import CustomFatTree
+from topologies.CustomTree import CustomTree
 
 from os import system
 from time import sleep
@@ -45,12 +46,16 @@ if __name__ == '__main__':
     if topoName == "LinearTopo":
         topo = LinearTopo(k=cfg_net['linear_topo']['k'],
                           n=cfg_net['linear_topo']['n'])
-    elif topoName == "TreeTopo":
-        topo = TreeTopo(depth=cfg_net['tree_topo']['depth'],
-                        fanout=cfg_net['tree_topo']['fanout'])
+    elif topoName == "CustomTree":
+        topo = CustomTree(depth=cfg_net['custom_tree']['depth'],
+                          fanout=cfg_net['custom_tree']['fanout'],
+                          totalHosts=cfg_net['custom_tree']['total_hosts'])
     elif topoName == "CustomFatTree":
         topo = CustomFatTree(e=cfg_net['custom_fat_tree']['e'],
                              n=cfg_net['custom_fat_tree']['n'])
+    elif topoName == "TreeTopo":
+        topo = TreeTopo(depth=cfg_net['tree_topo']['depth'],
+                        fanout=cfg_net['tree_topo']['fanout'])
     net = Mininet(topo)
 
     # Start network
