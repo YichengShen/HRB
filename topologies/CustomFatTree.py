@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 from mininet.topo import Topo
-from mininet.util import dumpNodeConnections
 
 
 def indexGen(prefix):
