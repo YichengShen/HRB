@@ -4,8 +4,9 @@ from mininet.log import setLogLevel
 
 from mininet.topo import LinearTopo
 from mininet.topolib import TreeTopo
-from topologies.CustomFatTree import CustomFatTree
 from topologies.CustomTree import CustomTree
+from topologies.CustomFatTree import CustomFatTree
+from topologies.SingleSwitchSlowSrc import SingleSwitchSlowSrc
 
 from os import system
 from time import sleep
@@ -53,6 +54,9 @@ if __name__ == '__main__':
     elif topoName == "CustomFatTree":
         topo = CustomFatTree(e=cfg_net['custom_fat_tree']['e'],
                              n=cfg_net['custom_fat_tree']['n'])
+    elif topoName == "SingleSwitchSlowSrc":
+        topo = SingleSwitchSlowSrc(k=cfg_net['single_switch_slow_src']['k'],
+                                   bw_src=cfg_net['single_switch_slow_src']['bw_src'])
     elif topoName == "TreeTopo":
         topo = TreeTopo(depth=cfg_net['tree_topo']['depth'],
                         fanout=cfg_net['tree_topo']['fanout'])

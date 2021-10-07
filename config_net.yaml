@@ -1,4 +1,4 @@
-topology: LinearTopo # [ LinearTopo, CustomTree, CustomFatTree, TreeTopo ]
+topology: LinearTopo # [ LinearTopo, CustomTree, CustomFatTree, SingleSwitchSlowSrc, TreeTopo ]
 
 # Mininet's LinearTopo (total_hosts = k*n)
 linear_topo:
@@ -15,6 +15,11 @@ custom_tree:
 custom_fat_tree:
   e: 5 # number of edge switches
   n: 1 # number of hosts per switch
+
+# topologies/SingleSwitchSlowSrc.py (total_hosts = k)
+single_switch_slow_src:
+  k: 5
+  bw_src: 0.5 # Bandwidth of the source node
 
 # Mininet's TreeTopo (total_hosts = fanout**depth)
 tree_topo:
