@@ -1,4 +1,12 @@
-topology: LinearTopo # [ LinearTopo, CustomTree, CustomFatTree, SingleSwitchSlowSrc, TreeTopo ]
+topology: EvalSmartHome # [ EvalSmartHome, LinearTopo, CustomTree, CustomFatTree, SingleSwitchSlowSrc, TreeTopo ]
+
+# A topology that simulates an IoT smart home setting
+smart_home:
+  k: 40 # number of nodes (hosts)
+  bw: 50000000 # bandwidth (bytes/s)
+  delay: '10ms'
+  jitter: '3ms'
+  loss: 2 # %
 
 # Mininet's LinearTopo (total_hosts = k*n)
 linear_topo:

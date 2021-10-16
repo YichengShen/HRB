@@ -7,6 +7,7 @@ from mininet.topolib import TreeTopo
 from topologies.CustomTree import CustomTree
 from topologies.CustomFatTree import CustomFatTree
 from topologies.SingleSwitchSlowSrc import SingleSwitchSlowSrc
+from topologies.evaluation.SmartHome import SmartHome
 
 from os import system
 from time import sleep
@@ -44,7 +45,13 @@ if __name__ == '__main__':
     setLogLevel('info')
 
     # Create network
-    if topoName == "LinearTopo":
+    if topoName == "EvalSmartHome":
+        topo = SmartHome(k=cfg_net['smart_home']['k'],
+                         bw=cfg_net['smart_home']['bw'],
+                         delay=cfg_net['smart_home']['delay'],
+                         jitter=cfg_net['smart_home']['jitter'],
+                         loss=cfg_net['smart_home']['loss'])
+    elif topoName == "LinearTopo":
         topo = LinearTopo(k=cfg_net['linear_topo']['k'],
                           n=cfg_net['linear_topo']['n'])
     elif topoName == "CustomTree":
