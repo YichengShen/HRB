@@ -1,4 +1,4 @@
-topology: EvalSmartHome # [ EvalSmartHome, LinearTopo, CustomTree, CustomFatTree, SingleSwitchSlowSrc, TreeTopo ]
+topology: EvalPaymentSystem # [ EvalSmartHome, EvalPaymentSystem, LinearTopo, CustomTree, CustomFatTree, SingleSwitchSlowSrc, TreeTopo ]
 
 # A topology that simulates an IoT smart home setting
 smart_home:
@@ -7,6 +7,14 @@ smart_home:
   delay: '10ms'
   jitter: '3ms'
   loss: 2 # %
+
+# A topology that simulates a payment system (asset transfer)
+payment_system:
+  e: 10 # number of edge switches (each edge links to 1 node)
+  bw: 10000000 # bandwidth (bytes/s)
+  delay: '50ms'
+  jitter: '25ms'
+  loss: 0 # %
 
 # Mininet's LinearTopo (total_hosts = k*n)
 linear_topo:

@@ -8,6 +8,7 @@ from topologies.CustomTree import CustomTree
 from topologies.CustomFatTree import CustomFatTree
 from topologies.SingleSwitchSlowSrc import SingleSwitchSlowSrc
 from topologies.evaluation.SmartHome import SmartHome
+from topologies.evaluation.PaymentSystem import PaymentSystem
 
 from os import system
 from time import sleep
@@ -51,22 +52,28 @@ if __name__ == '__main__':
                          delay=cfg_net['smart_home']['delay'],
                          jitter=cfg_net['smart_home']['jitter'],
                          loss=cfg_net['smart_home']['loss'])
-    elif topoName == "LinearTopo":
-        topo = LinearTopo(k=cfg_net['linear_topo']['k'],
-                          n=cfg_net['linear_topo']['n'])
-    elif topoName == "CustomTree":
-        topo = CustomTree(depth=cfg_net['custom_tree']['depth'],
-                          fanout=cfg_net['custom_tree']['fanout'],
-                          totalHosts=cfg_net['custom_tree']['total_hosts'])
-    elif topoName == "CustomFatTree":
-        topo = CustomFatTree(e=cfg_net['custom_fat_tree']['e'],
-                             n=cfg_net['custom_fat_tree']['n'])
-    elif topoName == "SingleSwitchSlowSrc":
-        topo = SingleSwitchSlowSrc(k=cfg_net['single_switch_slow_src']['k'],
-                                   bw_src=cfg_net['single_switch_slow_src']['bw_src'])
-    elif topoName == "TreeTopo":
-        topo = TreeTopo(depth=cfg_net['tree_topo']['depth'],
-                        fanout=cfg_net['tree_topo']['fanout'])
+    elif topoName == "EvalPaymentSystem":
+        topo = PaymentSystem(e=cfg_net['payment_system']['e'],
+                             bw=cfg_net['payment_system']['bw'],
+                             delay=cfg_net['payment_system']['delay'],
+                             jitter=cfg_net['payment_system']['jitter'],
+                             loss=cfg_net['payment_system']['loss'])
+    # elif topoName == "LinearTopo":
+    #     topo = LinearTopo(k=cfg_net['linear_topo']['k'],
+    #                       n=cfg_net['linear_topo']['n'])
+    # elif topoName == "CustomTree":
+    #     topo = CustomTree(depth=cfg_net['custom_tree']['depth'],
+    #                       fanout=cfg_net['custom_tree']['fanout'],
+    #                       totalHosts=cfg_net['custom_tree']['total_hosts'])
+    # elif topoName == "CustomFatTree":
+    #     topo = CustomFatTree(e=cfg_net['custom_fat_tree']['e'],
+    #                          n=cfg_net['custom_fat_tree']['n'])
+    # elif topoName == "SingleSwitchSlowSrc":
+    #     topo = SingleSwitchSlowSrc(k=cfg_net['single_switch_slow_src']['k'],
+    #                                bw_src=cfg_net['single_switch_slow_src']['bw_src'])
+    # elif topoName == "TreeTopo":
+    #     topo = TreeTopo(depth=cfg_net['tree_topo']['depth'],
+    #                     fanout=cfg_net['tree_topo']['fanout'])
     net = Mininet(topo)
 
     # Start network
