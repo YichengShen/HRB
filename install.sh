@@ -25,7 +25,17 @@ function install_go() {
     go version
 }
 
-pip3 install -r requirements.txt
+function install_python_deps() {
+    pip3 install -r requirements.txt
+}
+
+function install_go_deps() {
+    go get github.com/klauspost/reedsolomon
+    go get gopkg.in/yaml.v2
+}
+
 
 install_mininet
 install_go
+install_go_deps
+install_python_deps
