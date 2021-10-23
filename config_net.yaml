@@ -1,9 +1,9 @@
-topology: EvalPaymentSystem # [ EvalSmartHome, EvalPaymentSystem, LinearTopo, CustomTree, CustomFatTree, SingleSwitchSlowSrc, TreeTopo ]
+topology: EvalSmartHome # [ EvalSmartHome, EvalPaymentSystem, LinearTopo, CustomTree, CustomFatTree, SingleSwitchSlowSrc, TreeTopo ]
 
 # A topology that simulates an IoT smart home setting
 smart_home:
   k: 40 # number of nodes (hosts)
-  bw: 50000000 # bandwidth (bytes/s)
+  bw: 5 # bandwidth (Mbps)
   delay: '10ms'
   jitter: '3ms'
   loss: 2 # %
@@ -11,7 +11,7 @@ smart_home:
 # A topology that simulates a payment system (asset transfer)
 payment_system:
   e: 10 # number of edge switches (each edge links to 1 node)
-  bw: 10000000 # bandwidth (bytes/s)
+  bw: 10 # bandwidth (Mbps)
   delay: '50ms'
   jitter: '25ms'
   loss: 0 # %
