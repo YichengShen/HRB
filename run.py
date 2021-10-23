@@ -98,6 +98,9 @@ if __name__ == '__main__':
 
     net.stop()
 
+    # Clean
+    system("sudo mn --clean")
+
     # Run the analysis script to calculate mean throughput
     system("python3 analysis.py")
 
